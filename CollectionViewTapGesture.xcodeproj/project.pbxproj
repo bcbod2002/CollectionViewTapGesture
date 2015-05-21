@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCFFC6C01B0394EC00D9F0CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFFC6BF1B0394EC00D9F0CC /* main.m */; };
+		FCFFC6C31B0394EC00D9F0CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFFC6C21B0394EC00D9F0CC /* AppDelegate.m */; };
+		FCFFC6C61B0394EC00D9F0CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFFC6C51B0394EC00D9F0CC /* ViewController.m */; };
+		FCFFC6C91B0394EC00D9F0CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCFFC6C71B0394EC00D9F0CC /* Main.storyboard */; };
+		FCFFC6CB1B0394EC00D9F0CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFFC6CA1B0394EC00D9F0CC /* Images.xcassets */; };
+		FCFFC6CE1B0394EC00D9F0CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFFC6CC1B0394EC00D9F0CC /* LaunchScreen.xib */; };
+		FCFFC6DA1B0394EC00D9F0CC /* CollectionViewTapGestureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFFC6D91B0394EC00D9F0CC /* CollectionViewTapGestureTests.m */; };
+		FCFFC6F91B03A94F00D9F0CC /* TapCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFFC6F41B03A94F00D9F0CC /* TapCollectionViewCell.m */; };
+		FCFFC6FA1B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFFC6F61B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.m */; };
+		FCFFC6FB1B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFFC6F81B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCFFC6D41B0394EC00D9F0CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCFFC6B21B0394EC00D9F0CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCFFC6B91B0394EC00D9F0CC;
+			remoteInfo = CollectionViewTapGesture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FCFFC6BA1B0394EC00D9F0CC /* CollectionViewTapGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewTapGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCFFC6BE1B0394EC00D9F0CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCFFC6BF1B0394EC00D9F0CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FCFFC6C11B0394EC00D9F0CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FCFFC6C21B0394EC00D9F0CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FCFFC6C41B0394EC00D9F0CC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FCFFC6C51B0394EC00D9F0CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FCFFC6C81B0394EC00D9F0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCFFC6CA1B0394EC00D9F0CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FCFFC6CD1B0394EC00D9F0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FCFFC6D31B0394EC00D9F0CC /* CollectionViewTapGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewTapGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCFFC6D81B0394EC00D9F0CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCFFC6D91B0394EC00D9F0CC /* CollectionViewTapGestureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewTapGestureTests.m; sourceTree = "<group>"; };
+		FCFFC6F31B03A94F00D9F0CC /* TapCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapCollectionViewCell.h; path = CollectionViewRelate/TapCollectionViewCell.h; sourceTree = "<group>"; };
+		FCFFC6F41B03A94F00D9F0CC /* TapCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapCollectionViewCell.m; path = CollectionViewRelate/TapCollectionViewCell.m; sourceTree = "<group>"; };
+		FCFFC6F51B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tapCollectionViewFlowLayoutFour.h; path = CollectionViewRelate/tapCollectionViewFlowLayoutFour.h; sourceTree = "<group>"; };
+		FCFFC6F61B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tapCollectionViewFlowLayoutFour.m; path = CollectionViewRelate/tapCollectionViewFlowLayoutFour.m; sourceTree = "<group>"; };
+		FCFFC6F71B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tapCollectionViewFlowLayoutOne.h; path = CollectionViewRelate/tapCollectionViewFlowLayoutOne.h; sourceTree = "<group>"; };
+		FCFFC6F81B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tapCollectionViewFlowLayoutOne.m; path = CollectionViewRelate/tapCollectionViewFlowLayoutOne.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCFFC6B71B0394EC00D9F0CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCFFC6D01B0394EC00D9F0CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCFFC6B11B0394EC00D9F0CC = {
+			isa = PBXGroup;
+			children = (
+				FCFFC6BC1B0394EC00D9F0CC /* CollectionViewTapGesture */,
+				FCFFC6D61B0394EC00D9F0CC /* CollectionViewTapGestureTests */,
+				FCFFC6BB1B0394EC00D9F0CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCFFC6BB1B0394EC00D9F0CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCFFC6BA1B0394EC00D9F0CC /* CollectionViewTapGesture.app */,
+				FCFFC6D31B0394EC00D9F0CC /* CollectionViewTapGestureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCFFC6BC1B0394EC00D9F0CC /* CollectionViewTapGesture */ = {
+			isa = PBXGroup;
+			children = (
+				FCFFC6F31B03A94F00D9F0CC /* TapCollectionViewCell.h */,
+				FCFFC6F41B03A94F00D9F0CC /* TapCollectionViewCell.m */,
+				FCFFC6F51B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.h */,
+				FCFFC6F61B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.m */,
+				FCFFC6F71B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.h */,
+				FCFFC6F81B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.m */,
+				FCFFC6C11B0394EC00D9F0CC /* AppDelegate.h */,
+				FCFFC6C21B0394EC00D9F0CC /* AppDelegate.m */,
+				FCFFC6C41B0394EC00D9F0CC /* ViewController.h */,
+				FCFFC6C51B0394EC00D9F0CC /* ViewController.m */,
+				FCFFC6C71B0394EC00D9F0CC /* Main.storyboard */,
+				FCFFC6CA1B0394EC00D9F0CC /* Images.xcassets */,
+				FCFFC6CC1B0394EC00D9F0CC /* LaunchScreen.xib */,
+				FCFFC6BD1B0394EC00D9F0CC /* Supporting Files */,
+			);
+			path = CollectionViewTapGesture;
+			sourceTree = "<group>";
+		};
+		FCFFC6BD1B0394EC00D9F0CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCFFC6BE1B0394EC00D9F0CC /* Info.plist */,
+				FCFFC6BF1B0394EC00D9F0CC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCFFC6D61B0394EC00D9F0CC /* CollectionViewTapGestureTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCFFC6D91B0394EC00D9F0CC /* CollectionViewTapGestureTests.m */,
+				FCFFC6D71B0394EC00D9F0CC /* Supporting Files */,
+			);
+			path = CollectionViewTapGestureTests;
+			sourceTree = "<group>";
+		};
+		FCFFC6D71B0394EC00D9F0CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCFFC6D81B0394EC00D9F0CC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCFFC6B91B0394EC00D9F0CC /* CollectionViewTapGesture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCFFC6DD1B0394EC00D9F0CC /* Build configuration list for PBXNativeTarget "CollectionViewTapGesture" */;
+			buildPhases = (
+				FCFFC6B61B0394EC00D9F0CC /* Sources */,
+				FCFFC6B71B0394EC00D9F0CC /* Frameworks */,
+				FCFFC6B81B0394EC00D9F0CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollectionViewTapGesture;
+			productName = CollectionViewTapGesture;
+			productReference = FCFFC6BA1B0394EC00D9F0CC /* CollectionViewTapGesture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCFFC6D21B0394EC00D9F0CC /* CollectionViewTapGestureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCFFC6E01B0394EC00D9F0CC /* Build configuration list for PBXNativeTarget "CollectionViewTapGestureTests" */;
+			buildPhases = (
+				FCFFC6CF1B0394EC00D9F0CC /* Sources */,
+				FCFFC6D01B0394EC00D9F0CC /* Frameworks */,
+				FCFFC6D11B0394EC00D9F0CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCFFC6D51B0394EC00D9F0CC /* PBXTargetDependency */,
+			);
+			name = CollectionViewTapGestureTests;
+			productName = CollectionViewTapGestureTests;
+			productReference = FCFFC6D31B0394EC00D9F0CC /* CollectionViewTapGestureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCFFC6B21B0394EC00D9F0CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = GostonWu;
+				TargetAttributes = {
+					FCFFC6B91B0394EC00D9F0CC = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					FCFFC6D21B0394EC00D9F0CC = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = FCFFC6B91B0394EC00D9F0CC;
+					};
+				};
+			};
+			buildConfigurationList = FCFFC6B51B0394EC00D9F0CC /* Build configuration list for PBXProject "CollectionViewTapGesture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCFFC6B11B0394EC00D9F0CC;
+			productRefGroup = FCFFC6BB1B0394EC00D9F0CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCFFC6B91B0394EC00D9F0CC /* CollectionViewTapGesture */,
+				FCFFC6D21B0394EC00D9F0CC /* CollectionViewTapGestureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCFFC6B81B0394EC00D9F0CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFFC6C91B0394EC00D9F0CC /* Main.storyboard in Resources */,
+				FCFFC6CE1B0394EC00D9F0CC /* LaunchScreen.xib in Resources */,
+				FCFFC6CB1B0394EC00D9F0CC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCFFC6D11B0394EC00D9F0CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCFFC6B61B0394EC00D9F0CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFFC6C61B0394EC00D9F0CC /* ViewController.m in Sources */,
+				FCFFC6FA1B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.m in Sources */,
+				FCFFC6C31B0394EC00D9F0CC /* AppDelegate.m in Sources */,
+				FCFFC6F91B03A94F00D9F0CC /* TapCollectionViewCell.m in Sources */,
+				FCFFC6FB1B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.m in Sources */,
+				FCFFC6C01B0394EC00D9F0CC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCFFC6CF1B0394EC00D9F0CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFFC6DA1B0394EC00D9F0CC /* CollectionViewTapGestureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCFFC6D51B0394EC00D9F0CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCFFC6B91B0394EC00D9F0CC /* CollectionViewTapGesture */;
+			targetProxy = FCFFC6D41B0394EC00D9F0CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCFFC6C71B0394EC00D9F0CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCFFC6C81B0394EC00D9F0CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCFFC6CC1B0394EC00D9F0CC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCFFC6CD1B0394EC00D9F0CC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCFFC6DB1B0394EC00D9F0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FCFFC6DC1B0394EC00D9F0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCFFC6DE1B0394EC00D9F0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CollectionViewTapGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FCFFC6DF1B0394EC00D9F0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CollectionViewTapGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FCFFC6E11B0394EC00D9F0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CollectionViewTapGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CollectionViewTapGesture.app/CollectionViewTapGesture";
+			};
+			name = Debug;
+		};
+		FCFFC6E21B0394EC00D9F0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CollectionViewTapGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CollectionViewTapGesture.app/CollectionViewTapGesture";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCFFC6B51B0394EC00D9F0CC /* Build configuration list for PBXProject "CollectionViewTapGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCFFC6DB1B0394EC00D9F0CC /* Debug */,
+				FCFFC6DC1B0394EC00D9F0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCFFC6DD1B0394EC00D9F0CC /* Build configuration list for PBXNativeTarget "CollectionViewTapGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCFFC6DE1B0394EC00D9F0CC /* Debug */,
+				FCFFC6DF1B0394EC00D9F0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCFFC6E01B0394EC00D9F0CC /* Build configuration list for PBXNativeTarget "CollectionViewTapGestureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCFFC6E11B0394EC00D9F0CC /* Debug */,
+				FCFFC6E21B0394EC00D9F0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCFFC6B21B0394EC00D9F0CC /* Project object */;
+}
