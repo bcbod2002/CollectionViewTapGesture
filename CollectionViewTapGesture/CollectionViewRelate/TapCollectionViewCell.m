@@ -14,6 +14,11 @@
     tapCollectionViewFlowLayoutFour *flowLayoutFour;
 }
 
+-(void)prepareForReuse
+{
+    [super prepareForReuse];
+}
+
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -27,6 +32,13 @@
         flowLayoutFour = [[tapCollectionViewFlowLayoutFour alloc] init];
         flowLayoutOne = [[tapCollectionViewFlowLayoutOne alloc] init];
 
+        // Cell number Label
+        _cellNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 10.f) / 2, 20.f, 10.f)];
+        [_cellNumberLabel setFont:[UIFont systemFontOfSize:10.f]];
+        [_cellNumberLabel setTextAlignment:NSTextAlignmentCenter];
+        [_cellNumberLabel setTextColor:[UIColor whiteColor]];
+        [self.contentView addSubview:_cellNumberLabel];
+
         // Double tap gesture
         UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapTransitionFlowLayout:)];
         [doubleTapGesture setNumberOfTapsRequired:2];
@@ -39,16 +51,27 @@
     return self;
 }
 
+-(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
+{
+    return layoutAttributes;
+}
+
+-(void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
+{
+    [super applyLayoutAttributes:layoutAttributes];
+}
+
 -(void)willTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout
 {
-
+    [super willTransitionFromLayout:oldLayout toLayout:newLayout];
 }
 
 -(void)didTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout
 {
-
+    [super didTransitionFromLayout:oldLayout toLayout:newLayout];
 }
 
+#pragma mark - UITapGestureRecognization
 -(void)doubleTapTransitionFlowLayout:(UITapGestureRecognizer *)sender
 {
     [self realTapTransitionWithFlowLayout];
@@ -58,13 +81,20 @@
 {
     NSLog(@"self.superView = %@", self.superview);
     UICollectionView *superCollectionView = (UICollectionView *)self.superview;
+    if ([_delegate respondsToSelector:@selector(didChangecollectionWithCollectionViewFlowLayout:)])
+    {
+        [_delegate didChangecollectionWithCollectionViewFlowLayout:_nowFlowLayout];
+    }
+
     if ([_previousFlowLayout isKindOfClass:[tapCollectionViewFlowLayoutOne class]])
     {
         [superCollectionView setCollectionViewLayout:flowLayoutFour animated:YES];
+        _nowFlowLayout = flowLayoutFour;
     }
     else
     {
         [superCollectionView setCollectionViewLayout:flowLayoutOne animated:YES];
+        _nowFlowLayout = flowLayoutOne;
     }
 
 }

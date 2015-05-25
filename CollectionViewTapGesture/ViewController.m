@@ -62,6 +62,8 @@
     tapGestureCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (screenSize.height - screenSize.width) / 2, screenSize.width, screenSize.width) collectionViewLayout:tapFlowLayoutOne];
     [tapGestureCollectionView registerClass:[TapCollectionViewCell class] forCellWithReuseIdentifier:@"TapCell"];
     [tapGestureCollectionView setBackgroundColor:[UIColor colorWithRed:44.f / 255.f green:92.f / 255.f blue:1.f / 255.f alpha:1.f]];
+    [tapGestureCollectionView setAlwaysBounceHorizontal:YES];
+    [tapGestureCollectionView setAllowsMultipleSelection:NO];
     [tapGestureCollectionView setPagingEnabled:YES];
     [tapGestureCollectionView setDelegate:self];
     [tapGestureCollectionView setDataSource:self];
@@ -77,7 +79,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 4;
+    return 8;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -104,12 +106,12 @@
 
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [[(TapCollectionViewCell *)cell cellNumberLabel] setText:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
 }
 
 - (void)didReceiveMemoryWarning
