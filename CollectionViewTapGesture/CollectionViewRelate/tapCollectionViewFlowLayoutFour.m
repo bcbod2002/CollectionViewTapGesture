@@ -9,12 +9,16 @@
 #import "tapCollectionViewFlowLayoutFour.h"
 
 @implementation tapCollectionViewFlowLayoutFour
--(instancetype)init
+{
+    CGSize _collectionViewSize;
+}
+-(instancetype)initWithCollectionViewSize:(CGSize)collectionViewSize
 {
     self = [super init];
     if (self)
     {
-        self.itemSize = CGSizeMake(self.collectionView.frame.size.width / 2, self.collectionView.frame.size.height / 2);
+        _collectionViewSize = collectionViewSize;
+        self.itemSize = CGSizeMake(collectionViewSize.width / 2, collectionViewSize.height / 2);
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.sectionInset = UIEdgeInsetsZero;
         self.minimumInteritemSpacing = 0;
@@ -32,18 +36,20 @@
 -(CGSize)itemSize
 {
     [super itemSize];
-    return CGSizeMake(self.collectionView.frame.size.width / 2, self.collectionView.frame.size.height / 2);
+    return CGSizeMake(_collectionViewSize.width / 2, _collectionViewSize.height / 2);
 }
 
 -(CGSize)collectionViewContentSize
 {
+//    NSLog(@"Four collectionViewContentSize");
     [super collectionViewContentSize];
-    return CGSizeMake(self.collectionView.frame.size.width / 2, self.collectionView.frame.size.height / 2);
+    return CGSizeMake(self.collectionView.frame.size.width * 2, self.collectionView.frame.size.height);
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
-    self.itemSize = CGSizeMake(newBounds.size.width / 2, newBounds.size.height / 2);
+    NSLog(@"Four Four newBounds = %f, %f", newBounds.size.width, newBounds.size.height);
+//    self.itemSize = CGSizeMake(newBounds.size.width / 2, newBounds.size.height / 2);
     return YES;
 }
 

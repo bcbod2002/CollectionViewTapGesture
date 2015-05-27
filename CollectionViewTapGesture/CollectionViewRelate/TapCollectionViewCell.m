@@ -33,8 +33,8 @@
         flowLayoutOne = [[tapCollectionViewFlowLayoutOne alloc] init];
 
         // Cell number Label
-        _cellNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 10.f) / 2, 20.f, 10.f)];
-        [_cellNumberLabel setFont:[UIFont systemFontOfSize:10.f]];
+        _cellNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 10.f) / 2, 20.f, 14.f)];
+        [_cellNumberLabel setFont:[UIFont systemFontOfSize:20.f]];
         [_cellNumberLabel setTextAlignment:NSTextAlignmentCenter];
         [_cellNumberLabel setTextColor:[UIColor whiteColor]];
         [self.contentView addSubview:_cellNumberLabel];
@@ -51,6 +51,19 @@
     return self;
 }
 
+/**
+ *  To refresh Cell number UILabel
+ *
+ *  @param newLayout New UICollectionViewLayout
+ */
+-(void)refreshNumberLabelFrameWithLayout:(UICollectionViewLayout *)newLayout
+{
+//    NSLog(@"cell.contentView = %@", self.contentView);
+//    [_cellNumberLabel setFrame:CGRectMake((newLayout.collectionView.frame.size.width - 20.f) / 2, (newLayout.collectionView.frame.size.height - 10.f) / 2, 20.f, 14.f)];
+    [_cellNumberLabel setFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 10.f) / 2, 20.f, 14.f)];
+}
+
+#pragma mark - Override cell functions
 -(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
 {
     return layoutAttributes;
@@ -64,11 +77,14 @@
 -(void)willTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout
 {
     [super willTransitionFromLayout:oldLayout toLayout:newLayout];
+//    [self refreshNumberLabelFrameWithLayout:newLayout];
+//    NSLog(@"_cellNumberLabel = %@", _cellNumberLabel);
 }
 
 -(void)didTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout
 {
     [super didTransitionFromLayout:oldLayout toLayout:newLayout];
+    [self refreshNumberLabelFrameWithLayout:newLayout];
 }
 
 #pragma mark - UITapGestureRecognization
@@ -79,13 +95,8 @@
 
 -(void)realTapTransitionWithFlowLayout
 {
-    NSLog(@"self.superView = %@", self.superview);
     UICollectionView *superCollectionView = (UICollectionView *)self.superview;
-    if ([_delegate respondsToSelector:@selector(didChangecollectionWithCollectionViewFlowLayout:)])
-    {
-        [_delegate didChangecollectionWithCollectionViewFlowLayout:_nowFlowLayout];
-    }
-
+    [superCollectionView.collectionViewLayout invalidateLayout];
     if ([_previousFlowLayout isKindOfClass:[tapCollectionViewFlowLayoutOne class]])
     {
         [superCollectionView setCollectionViewLayout:flowLayoutFour animated:YES];
@@ -96,6 +107,11 @@
         [superCollectionView setCollectionViewLayout:flowLayoutOne animated:YES];
         _nowFlowLayout = flowLayoutOne;
     }
+    if ([_delegate respondsToSelector:@selector(didChangecollectionWithCollectionViewFlowLayout:)])
+    {
+        [_delegate didChangecollectionWithCollectionViewFlowLayout:_nowFlowLayout];
+    }
+
 
 }
 

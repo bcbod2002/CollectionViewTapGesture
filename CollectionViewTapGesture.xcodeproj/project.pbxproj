@@ -90,14 +90,14 @@
 		FCFFC6BC1B0394EC00D9F0CC /* CollectionViewTapGesture */ = {
 			isa = PBXGroup;
 			children = (
+				FCFFC6C11B0394EC00D9F0CC /* AppDelegate.h */,
+				FCFFC6C21B0394EC00D9F0CC /* AppDelegate.m */,
 				FCFFC6F31B03A94F00D9F0CC /* TapCollectionViewCell.h */,
 				FCFFC6F41B03A94F00D9F0CC /* TapCollectionViewCell.m */,
 				FCFFC6F51B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.h */,
 				FCFFC6F61B03A94F00D9F0CC /* tapCollectionViewFlowLayoutFour.m */,
 				FCFFC6F71B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.h */,
 				FCFFC6F81B03A94F00D9F0CC /* tapCollectionViewFlowLayoutOne.m */,
-				FCFFC6C11B0394EC00D9F0CC /* AppDelegate.h */,
-				FCFFC6C21B0394EC00D9F0CC /* AppDelegate.m */,
 				FCFFC6C41B0394EC00D9F0CC /* ViewController.h */,
 				FCFFC6C51B0394EC00D9F0CC /* ViewController.m */,
 				FCFFC6C71B0394EC00D9F0CC /* Main.storyboard */,
@@ -434,6 +434,7 @@
 				FCFFC6DF1B0394EC00D9F0CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCFFC6E01B0394EC00D9F0CC /* Build configuration list for PBXNativeTarget "CollectionViewTapGestureTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +443,7 @@
 				FCFFC6E21B0394EC00D9F0CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

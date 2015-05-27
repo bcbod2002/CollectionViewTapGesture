@@ -9,7 +9,18 @@
 #import <UIKit/UIKit.h>
 
 
-
 @interface tapCollectionViewFlowLayoutOne : UICollectionViewFlowLayout
+
+#pragma mark - Variables
+
+#pragma mark - Functions
+/**
+ *  Initial tapCollectionViewFlowLayoutOne
+ *
+ *  @param collectionViewSize CollectionView size
+ *
+ *  @return UICollectionViewFlowLayout
+ */
+-(instancetype)initWithCollectionViewSize:(CGSize)collectionViewSize;
 
 @end

@@ -17,6 +17,7 @@
     UICollectionView *tapGestureCollectionView;
     tapCollectionViewFlowLayoutOne *tapFlowLayoutOne;
     tapCollectionViewFlowLayoutFour *tapFlowLayoutFour;
+//    NSIndexPath
 }
 
 @end
@@ -56,8 +57,8 @@
 #pragma mark - Initiate
 -(void)initialCollectionView
 {
-    tapFlowLayoutOne = [[tapCollectionViewFlowLayoutOne alloc] init];
-    tapFlowLayoutFour = [[tapCollectionViewFlowLayoutFour alloc] init];
+    tapFlowLayoutOne = [[tapCollectionViewFlowLayoutOne alloc] initWithCollectionViewSize:screenSize];
+    tapFlowLayoutFour = [[tapCollectionViewFlowLayoutFour alloc] initWithCollectionViewSize:screenSize];
 
     tapGestureCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (screenSize.height - screenSize.width) / 2, screenSize.width, screenSize.width) collectionViewLayout:tapFlowLayoutOne];
     [tapGestureCollectionView registerClass:[TapCollectionViewCell class] forCellWithReuseIdentifier:@"TapCell"];

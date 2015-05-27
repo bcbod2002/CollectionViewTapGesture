@@ -10,4 +10,16 @@
 
 @interface tapCollectionViewFlowLayoutFour : UICollectionViewFlowLayout
 
+#pragma mark - Variables
+
+#pragma mark - Functions
+/**
+ *  Initial tapCollectionFlowLayoutFour
+ *
+ *  @param collectionViewSize CollectionView size
+ *
+ *  @return UICollectionViewFlowLayout
+ */
+-(instancetype)initWithCollectionViewSize:(CGSize)collectionViewSize;
+
 @end
