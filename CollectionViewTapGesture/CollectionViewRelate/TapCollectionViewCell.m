@@ -9,9 +9,6 @@
 #import "TapCollectionViewCell.h"
 
 @implementation TapCollectionViewCell
-{
-
-}
 
 -(void)prepareForReuse
 {
@@ -39,7 +36,7 @@
         UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapTransitionFlowLayout:)];
         [doubleTapGesture setNumberOfTapsRequired:2];
         [doubleTapGesture setNumberOfTouchesRequired:1];
-//        [doubleTapGesture setCancelsTouchesInView:NO];
+        [doubleTapGesture setCancelsTouchesInView:NO];
         [self addGestureRecognizer:doubleTapGesture];
 
     }
@@ -71,9 +68,6 @@
 -(void)willTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout
 {
     [super willTransitionFromLayout:oldLayout toLayout:newLayout];
-//    NSLog(@"Old flowlayout = %f, %f", [(UICollectionViewFlowLayout *)oldLayout.collectionView.collectionViewLayout itemSize].width, [(UICollectionViewFlowLayout *)oldLayout.collectionView.collectionViewLayout itemSize].height);
-    
-//    NSLog(@"New flowlayout = %f, %f", [(UICollectionViewFlowLayout *)newLayout.collectionView.collectionViewLayout itemSize].width, [(UICollectionViewFlowLayout *)newLayout.collectionView.collectionViewLayout itemSize].height);
 }
 
 -(void)didTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout

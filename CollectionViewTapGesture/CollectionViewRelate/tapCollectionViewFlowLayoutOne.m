@@ -18,7 +18,6 @@
     self = [super init];
     if (self)
     {
-        NSLog(@"One One collectionViewSize = %f, %f", collectionViewSize.width, collectionViewSize.height);
         _collectionViewSize = collectionViewSize;
         self.itemSize = CGSizeMake(collectionViewSize.width, collectionViewSize.height);
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -35,28 +34,9 @@
     [super prepareLayout];
 }
 
-//-(CGSize)itemSize
-//{
-//    [super itemSize];
-//    return CGSizeMake(_collectionViewSize.width, _collectionViewSize.height);
-//}
-
-//-(CGSize)collectionViewContentSize
-//{
-//    [super collectionViewContentSize];
-//    return CGSizeMake(self.collectionView.frame.size.width * 8, self.collectionView.frame.size.height);
-//}
-
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
-//    NSLog(@"One One newBounds = %f, %f", newBounds.size.width, newBounds.size.height);
-//    self.itemSize = newBounds.size;
     return YES;
-}
-
--(void)prepareForAnimatedBoundsChange:(CGRect)oldBounds
-{
-//    NSLog(@"prepareForAnimatedBoundsChange four four Old = %@", oldBounds);
 }
 
 -(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
