@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UILabel *cellNumberLabel;
 @property (nonatomic, weak) id <TapCollectionViewCellDelegate> delegate;
 @property (nonatomic, readwrite) UICollectionViewFlowLayout *previousFlowLayout;
-@property (nonatomic, readwrite) UICollectionViewFlowLayout *nowFlowLayout;
+@property (nonatomic, readwrite) UICollectionViewFlowLayout *nextFlowLayout;
 
 #pragma mark - Functions
 

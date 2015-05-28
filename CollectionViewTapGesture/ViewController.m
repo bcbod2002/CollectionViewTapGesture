@@ -17,7 +17,7 @@
     UICollectionView *tapGestureCollectionView;
     tapCollectionViewFlowLayoutOne *tapFlowLayoutOne;
     tapCollectionViewFlowLayoutFour *tapFlowLayoutFour;
-//    NSIndexPath
+    NSIndexPath *selectedCellIndexPath;
 }
 
 @end
@@ -57,15 +57,16 @@
 #pragma mark - Initiate
 -(void)initialCollectionView
 {
-    tapFlowLayoutOne = [[tapCollectionViewFlowLayoutOne alloc] initWithCollectionViewSize:screenSize];
-    tapFlowLayoutFour = [[tapCollectionViewFlowLayoutFour alloc] initWithCollectionViewSize:screenSize];
+    tapFlowLayoutOne = [[tapCollectionViewFlowLayoutOne alloc] initWithCollectionViewSize:CGSizeMake(screenSize.width, screenSize.width)];
+    tapFlowLayoutFour = [[tapCollectionViewFlowLayoutFour alloc] initWithCollectionViewSize:CGSizeMake(screenSize.width, screenSize.width)];
 
-    tapGestureCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (screenSize.height - screenSize.width) / 2, screenSize.width, screenSize.width) collectionViewLayout:tapFlowLayoutOne];
+    tapGestureCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (screenSize.height - screenSize.width) / 2, screenSize.width, screenSize.width) collectionViewLayout:tapFlowLayoutFour];
     [tapGestureCollectionView registerClass:[TapCollectionViewCell class] forCellWithReuseIdentifier:@"TapCell"];
     [tapGestureCollectionView setBackgroundColor:[UIColor colorWithRed:44.f / 255.f green:92.f / 255.f blue:1.f / 255.f alpha:1.f]];
     [tapGestureCollectionView setAlwaysBounceHorizontal:YES];
     [tapGestureCollectionView setAllowsMultipleSelection:NO];
     [tapGestureCollectionView setPagingEnabled:YES];
+//    [tapGestureCollectionView setScrollEnabled:NO];
     [tapGestureCollectionView setDelegate:self];
     [tapGestureCollectionView setDataSource:self];
 
@@ -85,7 +86,7 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TapCollectionViewCell *cell = (TapCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"TapCell" forIndexPath:indexPath];
+    TapCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TapCell" forIndexPath:indexPath];
 
     return cell;
 }
@@ -96,7 +97,18 @@
 {
     TapCollectionViewCell *cell = (TapCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     [cell setPreviousFlowLayout:(UICollectionViewFlowLayout *)collectionView.collectionViewLayout];
-    [cell.layer setBorderColor:[UIColor blueColor].CGColor];
+    [cell.layer setBorderColor:[UIColor redColor].CGColor];
+    selectedCellIndexPath = indexPath;
+    
+    if ([collectionView.collectionViewLayout isKindOfClass:[tapCollectionViewFlowLayoutOne class]])
+    {
+        [cell setNextFlowLayout:tapFlowLayoutFour];
+    }
+    else
+    {
+        [cell setNextFlowLayout:tapFlowLayoutOne];
+    }
+    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -108,6 +120,14 @@
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [[(TapCollectionViewCell *)cell cellNumberLabel] setText:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+    if (indexPath != selectedCellIndexPath)
+    {
+        [cell.layer setBorderColor:[UIColor whiteColor].CGColor];
+    }
+    else
+    {
+        [cell.layer setBorderColor:[UIColor redColor].CGColor];
+    }
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath

@@ -33,22 +33,23 @@
     [super prepareLayout];
 }
 
--(CGSize)itemSize
-{
-    [super itemSize];
-    return CGSizeMake(_collectionViewSize.width / 2, _collectionViewSize.height / 2);
-}
+//-(CGSize)itemSize
+//{
+//    [super itemSize];
+//    return CGSizeMake(_collectionViewSize.width / 2, _collectionViewSize.height / 2);
+//}
 
--(CGSize)collectionViewContentSize
-{
-//    NSLog(@"Four collectionViewContentSize");
-    [super collectionViewContentSize];
-    return CGSizeMake(self.collectionView.frame.size.width * 2, self.collectionView.frame.size.height);
-}
+//-(CGSize)collectionViewContentSize
+//{
+////    NSLog(@"Four collectionViewContentSize");
+////    NSLog(@"self.collectionView.frame.size.width = %f", self.collectionView.frame.size.width);
+//    [super collectionViewContentSize];
+//    return CGSizeMake(self.collectionView.frame.size.width * 2, self.collectionView.frame.size.height);
+//}
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
-    NSLog(@"Four Four newBounds = %f, %f", newBounds.size.width, newBounds.size.height);
+//    NSLog(@"Four Four newBounds = %f, %f", newBounds.size.width, newBounds.size.height);
 //    self.itemSize = CGSizeMake(newBounds.size.width / 2, newBounds.size.height / 2);
     return YES;
 }

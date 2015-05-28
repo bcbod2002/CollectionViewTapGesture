@@ -10,8 +10,7 @@
 
 @implementation TapCollectionViewCell
 {
-    tapCollectionViewFlowLayoutOne *flowLayoutOne;
-    tapCollectionViewFlowLayoutFour *flowLayoutFour;
+
 }
 
 -(void)prepareForReuse
@@ -29,11 +28,8 @@
         [self.layer setBorderColor:[UIColor whiteColor].CGColor];
         [self.layer setCornerRadius:30.f];
 
-        flowLayoutFour = [[tapCollectionViewFlowLayoutFour alloc] init];
-        flowLayoutOne = [[tapCollectionViewFlowLayoutOne alloc] init];
-
         // Cell number Label
-        _cellNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 10.f) / 2, 20.f, 14.f)];
+        _cellNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 16.f) / 2, 20.f, 16.f)];
         [_cellNumberLabel setFont:[UIFont systemFontOfSize:20.f]];
         [_cellNumberLabel setTextAlignment:NSTextAlignmentCenter];
         [_cellNumberLabel setTextColor:[UIColor whiteColor]];
@@ -43,7 +39,7 @@
         UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapTransitionFlowLayout:)];
         [doubleTapGesture setNumberOfTapsRequired:2];
         [doubleTapGesture setNumberOfTouchesRequired:1];
-        [doubleTapGesture setCancelsTouchesInView:NO];
+//        [doubleTapGesture setCancelsTouchesInView:NO];
         [self addGestureRecognizer:doubleTapGesture];
 
     }
@@ -58,9 +54,7 @@
  */
 -(void)refreshNumberLabelFrameWithLayout:(UICollectionViewLayout *)newLayout
 {
-//    NSLog(@"cell.contentView = %@", self.contentView);
-//    [_cellNumberLabel setFrame:CGRectMake((newLayout.collectionView.frame.size.width - 20.f) / 2, (newLayout.collectionView.frame.size.height - 10.f) / 2, 20.f, 14.f)];
-    [_cellNumberLabel setFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 10.f) / 2, 20.f, 14.f)];
+    [_cellNumberLabel setFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 16.f) / 2, 20.f, 16.f)];
 }
 
 #pragma mark - Override cell functions
@@ -77,8 +71,9 @@
 -(void)willTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout
 {
     [super willTransitionFromLayout:oldLayout toLayout:newLayout];
-//    [self refreshNumberLabelFrameWithLayout:newLayout];
-//    NSLog(@"_cellNumberLabel = %@", _cellNumberLabel);
+//    NSLog(@"Old flowlayout = %f, %f", [(UICollectionViewFlowLayout *)oldLayout.collectionView.collectionViewLayout itemSize].width, [(UICollectionViewFlowLayout *)oldLayout.collectionView.collectionViewLayout itemSize].height);
+    
+//    NSLog(@"New flowlayout = %f, %f", [(UICollectionViewFlowLayout *)newLayout.collectionView.collectionViewLayout itemSize].width, [(UICollectionViewFlowLayout *)newLayout.collectionView.collectionViewLayout itemSize].height);
 }
 
 -(void)didTransitionFromLayout:(UICollectionViewLayout *)oldLayout toLayout:(UICollectionViewLayout *)newLayout
@@ -96,20 +91,10 @@
 -(void)realTapTransitionWithFlowLayout
 {
     UICollectionView *superCollectionView = (UICollectionView *)self.superview;
-    [superCollectionView.collectionViewLayout invalidateLayout];
-    if ([_previousFlowLayout isKindOfClass:[tapCollectionViewFlowLayoutOne class]])
-    {
-        [superCollectionView setCollectionViewLayout:flowLayoutFour animated:YES];
-        _nowFlowLayout = flowLayoutFour;
-    }
-    else
-    {
-        [superCollectionView setCollectionViewLayout:flowLayoutOne animated:YES];
-        _nowFlowLayout = flowLayoutOne;
-    }
+    [superCollectionView setCollectionViewLayout:_nextFlowLayout animated:YES];
     if ([_delegate respondsToSelector:@selector(didChangecollectionWithCollectionViewFlowLayout:)])
     {
-        [_delegate didChangecollectionWithCollectionViewFlowLayout:_nowFlowLayout];
+        [_delegate didChangecollectionWithCollectionViewFlowLayout:_nextFlowLayout];
     }
 
 
