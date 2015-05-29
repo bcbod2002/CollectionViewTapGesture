@@ -23,10 +23,12 @@ There are two git animations when "setScrollEnable" with Yes and NO as follow:
 
 setPagingEnabled = YES
 //setScrollEnable = NO
+
 ![alt tag](https://github.com/bcbod2002/CollectionViewTapGesture/blob/master/Before.gif)
 
 
-setScrollEnable = NO
-//setPagingEnabled = YES
+//setScrollEnable = NO
+setPagingEnabled = YES
+
 ![alt tag](https://github.com/bcbod2002/CollectionViewTapGesture/blob/master/After.gif)
 
