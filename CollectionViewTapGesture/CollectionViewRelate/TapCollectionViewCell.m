@@ -9,7 +9,9 @@
 #import "TapCollectionViewCell.h"
 
 @implementation TapCollectionViewCell
-
+{
+    UITapGestureRecognizer *doubleTapGesture;
+}
 -(void)prepareForReuse
 {
     [super prepareForReuse];
@@ -33,12 +35,12 @@
         [self.contentView addSubview:_cellNumberLabel];
 
         // Double tap gesture
-        UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapTransitionFlowLayout:)];
+        doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapTransitionFlowLayout:)];
         [doubleTapGesture setNumberOfTapsRequired:2];
         [doubleTapGesture setNumberOfTouchesRequired:1];
-        [doubleTapGesture setCancelsTouchesInView:NO];
+//        [doubleTapGesture setCancelsTouchesInView:NO];
         [self addGestureRecognizer:doubleTapGesture];
-
+        NSLog(@"doubleTapGesture.cancleTouchesInView = %d", doubleTapGesture.cancelsTouchesInView);
     }
 
     return self;
@@ -52,6 +54,13 @@
 -(void)refreshNumberLabelFrameWithLayout:(UICollectionViewLayout *)newLayout
 {
     [_cellNumberLabel setFrame:CGRectMake((self.contentView.frame.size.width - 20.f) / 2, (self.contentView.frame.size.height - 16.f) / 2, 20.f, 16.f)];
+}
+
+-(void)setSetCancelTouchesInViewTag:(BOOL)setCancelTouchesInViewTag
+{
+    _setCancelTouchesInViewTag = setCancelTouchesInViewTag;
+    [doubleTapGesture setCancelsTouchesInView:setCancelTouchesInViewTag];
+    
 }
 
 #pragma mark - Override cell functions
@@ -79,6 +88,7 @@
 #pragma mark - UITapGestureRecognization
 -(void)doubleTapTransitionFlowLayout:(UITapGestureRecognizer *)sender
 {
+    NSLog(@"Cell double Tap");
     [self realTapTransitionWithFlowLayout];
 }
 
@@ -90,8 +100,6 @@
     {
         [_delegate didChangecollectionWithCollectionViewFlowLayout:_nextFlowLayout];
     }
-
-
 }
 
 @end

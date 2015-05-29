@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
+- (IBAction)scrollChangeButtonTouchInside:(UIButton *)sender;
+- (IBAction)cellChangeButtonTouchInside:(UIButton *)sender;
 
 @end
 

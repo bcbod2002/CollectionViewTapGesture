@@ -23,7 +23,7 @@
 @property (nonatomic, weak) id <TapCollectionViewCellDelegate> delegate;
 @property (nonatomic, readwrite) UICollectionViewFlowLayout *previousFlowLayout;
 @property (nonatomic, readwrite) UICollectionViewFlowLayout *nextFlowLayout;
-
+@property (nonatomic, readwrite) BOOL setCancelTouchesInViewTag;
 #pragma mark - Functions
 
 @end

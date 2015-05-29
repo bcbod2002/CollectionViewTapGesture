@@ -18,6 +18,8 @@
     tapCollectionViewFlowLayoutOne *tapFlowLayoutOne;
     tapCollectionViewFlowLayoutFour *tapFlowLayoutFour;
     NSIndexPath *selectedCellIndexPath;
+    
+    NSMutableArray *allCellArray;
 }
 
 @end
@@ -31,6 +33,8 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     screenSize = [UIScreen mainScreen].bounds.size;
+    
+    allCellArray = [[NSMutableArray alloc] init];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -87,6 +91,12 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TapCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TapCell" forIndexPath:indexPath];
+    
+    if (cell.tag != 213)
+    {
+        [allCellArray addObject:cell];
+        [cell setTag:213];
+    }
 
     return cell;
 }
@@ -141,4 +151,44 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UIButton actions
+- (IBAction)scrollChangeButtonTouchInside:(UIButton *)sender
+{
+    if (tapGestureCollectionView.scrollEnabled && tapGestureCollectionView.pagingEnabled)
+    {
+        [tapGestureCollectionView setScrollEnabled:NO];
+        [tapGestureCollectionView setPagingEnabled:NO];
+        [sender setTitle:@"Scroll Disable" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [tapGestureCollectionView setScrollEnabled:YES];
+        [tapGestureCollectionView setPagingEnabled:YES];
+        [sender setTitle:@"Scroll Enable" forState:UIControlStateNormal];
+    }
+    
+}
+
+- (IBAction)cellChangeButtonTouchInside:(UIButton *)sender
+{
+    TapCollectionViewCell *changeCell = [allCellArray objectAtIndex:0];
+    if (changeCell.setCancelTouchesInViewTag)
+    {
+        for (TapCollectionViewCell *cell in allCellArray)
+        {
+            [cell setSetCancelTouchesInViewTag:NO];
+        }
+        NSLog(@"1111");
+        [sender setTitle:@"Cancels Touches In View Disable" forState:UIControlStateNormal];
+    }
+    else
+    {
+        for (TapCollectionViewCell *cell in allCellArray)
+        {
+            [cell setSetCancelTouchesInViewTag:YES];
+        }
+        NSLog(@"2222");
+        [sender setTitle:@"Cancels Touches In View Enable" forState:UIControlStateNormal];
+    }
+}
 @end
