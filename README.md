@@ -15,21 +15,12 @@ After set collection view scroll disable.
 
 Select the collection view cell become very and very slow.
 
-It means when user select the collection view cell the function "didSelectItemAtIndexPath" will be called after 0.5 second ~ 1.0 second.
+It means that user select the collection view cell the function "didSelectItemAtIndexPath" will be called after 0.5 second ~ 1.0 second.
 
 It's not like the function "setScrollEnable" with NO. The "didSelectItemAtIndexPath" will be called after user select the collection view cell.
 
-There are two git animations when "setScrollEnable" with Yes and NO as follow:
+Even set double tap "setCancelsTouchesInView" couldn't resolve this situation.
 
-
-//setScrollEnable = NO
-<br>setPagingEnabled = YES
+There is a gif animations when "setScrollEnable" with Yes and NO as follow:
 
 ![alt tag](https://github.com/bcbod2002/CollectionViewTapGesture/blob/master/Before.gif)
-
-
-setScrollEnable = NO
-<br>//setPagingEnabled = YES
-
-![alt tag](https://github.com/bcbod2002/CollectionViewTapGesture/blob/master/After.gif)
-
