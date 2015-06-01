@@ -23,4 +23,4 @@ Even set double tap "setCancelsTouchesInView" couldn't resolve this situation.
 
 There is a gif animations when "setScrollEnable" with Yes and NO as follow:
 
-![alt tag](https://github.com/bcbod2002/CollectionViewTapGesture/blob/master/Before.gif)
+![alt tag](https://github.com/bcbod2002/CollectionViewTapGesture/blob/master/Demo.gif)
