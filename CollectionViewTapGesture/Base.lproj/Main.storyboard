@@ -18,13 +18,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpN-Zk-ilg">
                                 <rect key="frame" x="239" y="70" width="122" height="30"/>
+                                <color key="backgroundColor" red="0.079215876759999998" green="0.60486370330000006" blue="0.1858071238" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="A2a-9s-u3E"/>
                                     <constraint firstAttribute="width" constant="122" id="lSm-BU-VkG"/>
                                 </constraints>
                                 <state key="normal" title="Scroll Enable">
-                                    <color key="titleColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="scrollChangeButtonTouchInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pPb-cM-Vx4"/>
@@ -32,13 +33,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPB-IW-xBK">
                                 <rect key="frame" x="176" y="526" width="248" height="30"/>
+                                <color key="backgroundColor" red="0.079215876758098602" green="0.60486370325088501" blue="0.18580712378025055" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="248" id="R4O-IO-lrs"/>
                                     <constraint firstAttribute="height" constant="30" id="sMS-cV-JFF"/>
                                 </constraints>
                                 <state key="normal" title="Cancels Touches In View Enable">
-                                    <color key="titleColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cellChangeButtonTouchInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bHK-q3-ogk"/>

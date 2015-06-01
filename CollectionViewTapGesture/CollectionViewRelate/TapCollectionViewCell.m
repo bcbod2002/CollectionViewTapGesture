@@ -39,8 +39,9 @@
         [doubleTapGesture setNumberOfTapsRequired:2];
         [doubleTapGesture setNumberOfTouchesRequired:1];
 //        [doubleTapGesture setCancelsTouchesInView:NO];
+        [doubleTapGesture setCancelsTouchesInView:YES];
         [self addGestureRecognizer:doubleTapGesture];
-        NSLog(@"doubleTapGesture.cancleTouchesInView = %d", doubleTapGesture.cancelsTouchesInView);
+        _setCancelTouchesInViewTag = YES;
     }
 
     return self;

@@ -118,7 +118,6 @@
     {
         [cell setNextFlowLayout:tapFlowLayoutOne];
     }
-    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -159,12 +158,14 @@
         [tapGestureCollectionView setScrollEnabled:NO];
         [tapGestureCollectionView setPagingEnabled:NO];
         [sender setTitle:@"Scroll Disable" forState:UIControlStateNormal];
+        [sender setBackgroundColor:[UIColor colorWithRed:215.f / 255.f green:55.f / 255.f blue:46.f / 255.f alpha:1.0f]];
     }
     else
     {
         [tapGestureCollectionView setScrollEnabled:YES];
         [tapGestureCollectionView setPagingEnabled:YES];
         [sender setTitle:@"Scroll Enable" forState:UIControlStateNormal];
+        [sender setBackgroundColor:[UIColor colorWithRed:20.f / 255.f green:154.f / 255.f blue:47.f / 255.f alpha:1.0f]];
     }
     
 }
@@ -178,8 +179,8 @@
         {
             [cell setSetCancelTouchesInViewTag:NO];
         }
-        NSLog(@"1111");
         [sender setTitle:@"Cancels Touches In View Disable" forState:UIControlStateNormal];
+        [sender setBackgroundColor:[UIColor colorWithRed:215.f / 255.f green:55.f / 255.f blue:46.f / 255.f alpha:1.0f]];
     }
     else
     {
@@ -187,8 +188,8 @@
         {
             [cell setSetCancelTouchesInViewTag:YES];
         }
-        NSLog(@"2222");
         [sender setTitle:@"Cancels Touches In View Enable" forState:UIControlStateNormal];
+        [sender setBackgroundColor:[UIColor colorWithRed:20.f / 255.f green:154.f / 255.f blue:47.f / 255.f alpha:1.0f]];
     }
 }
 @end
