@@ -97,7 +97,8 @@
         [allCellArray addObject:cell];
         [cell setTag:213];
     }
-
+    NSLog(@"cell.gesture = %@", cell.gestureRecognizers);
+    NSLog(@"collectionView gesture = %@", collectionView.gestureRecognizers);
     return cell;
 }
 
